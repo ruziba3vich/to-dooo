@@ -18,10 +18,10 @@ public class ToDoItem {
     private LocalDateTime updatedOn;
     private String title;
     private String description;
-    private String status;
+    private Status status;
 
     public ToDoItem (
-        String title, String description, String status
+        String title, String description, Status status
     ) {
         this.createdOn = LocalDateTime.now();
         this.setTitle(title);
@@ -29,35 +29,44 @@ public class ToDoItem {
         this.setStatus(status);
     }
 
+    public Long getId () {
+        return this.id;
+    }
+
+    public ToDoItem() {
+        this.createdOn = LocalDateTime.now();
+    }
+    
+
     public  LocalDateTime getCreatedDateTime () {
-        return createdOn;
+        return this.createdOn;
     }
 
     public void setUpdatedDateTime (LocalDateTime newUpdatedTime) {
         this.updatedOn = newUpdatedTime;
     }
     public LocalDateTime getUpdatedDateTime () {
-        return updatedOn;
+        return this.updatedOn;
     }
 
     public void setTitle (String title) {
         this.title = title;
     }
     public String getTitle () {
-        return title;
+        return this.title;
     }
 
     public void setDescription (String description) {
         this.description = description;
     }
     public String getDescription () {
-        return description;
+        return this.description;
     }
 
-    public void setStatus (String status) {
-        this.status = status;
+    public void setStatus (Status status2) {
+        this.status = status2;
     }
-    public String getStatus () {
-        return status;
+    public Status getStatus () {
+        return this.status;
     }
 }
